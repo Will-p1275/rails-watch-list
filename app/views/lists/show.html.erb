@@ -1,0 +1,23 @@
+<div class="container">
+  <h2><%= @list.name %></h2>
+  <div>
+    <% @list.movies.each do |f|  %>
+    <div class="row">
+      <div>
+        <%= f.title %>
+      </div>
+      <div>
+        <%= f.overview %>
+      </div>
+      <div>
+        <%= f.poster_url %>
+      </div>
+      <div>
+        <%= f.rating %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "Add a new film", new_list_bookmark_path(@list) %>
+  <%= link_to "back to the list", lists_path  %>
+</div>
